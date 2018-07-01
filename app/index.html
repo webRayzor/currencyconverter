@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/cconverter.css">
+    <script src="js/cconverter.js"></script>
+    <script src="js/converter.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Ewert|Jacques+Francois+Shadow|Marko+One|Monoton|Pacifico:50" rel="stylesheet">
+</head>
+
+<body onload="loadCurrencies()">
+    <div class="container main-panel">
+        <div class="col-md-offset-4 col-md-4 panel">
+
+            <div class="row header">
+                CURRENCY CONVERTER
+            </div>
+
+            <div class="row">
+                <div class="col-5 targetText">Currency Value: </div>
+                <div class="col-6 ">
+                    <input type="text" class=" form-control" id="amount">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-5 spaceElemet targetText">Convert From:</div>
+                <div class="col-5 spaceElemet"><select id="from"></select></div>
+                <div class="col-5 spaceElemet targetText">Convert To:</div>
+                <div class="col-5 spaceElemet"><select id="to"></select></div>
+            </div>
+
+            <div class="row">
+                <button onclick="convertCurrency()" class="col-7 btn btn-primary">Convert Currency</button>
+                <span class="col-5" id="result"></span>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

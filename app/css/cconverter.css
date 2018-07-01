@@ -1,0 +1,42 @@
+.main-panel {
+    margin-top: 50px;
+}
+
+div.row {
+    padding: 10px;
+}
+
+.header {
+    background-color: #35b084;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: 'Jacques Francois Shadow', cursive;
+}
+
+.panel {
+    border: 1px solid rgb(39, 216, 163);
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 auto;
+    background-image: url('../img/bg-panel2.png');
+}
+
+.spaceElemet {
+    margin: 10px;
+}
+
+.targetText {
+    font-family: 'Marko One', serif;
+}
+
+.result {
+    width: 100%;
+    background-color: #35b084;
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 5px 0 0 0px;
+    border-radius: 5px;
+    text-align: center;
+}
