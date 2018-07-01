@@ -18,28 +18,27 @@ function convertCurrency(amount, fromCurrency, toCurrency, cb) {
 
     fromCurrency = encodeURIComponent(fromCurrency);
     toCurrency = encodeURIComponent(toCurrency);
-    var query = fromCurrency + '_' + toCurrency;
+    const query = `${fromCurrency}_${toCurrency}`;
 
-    var url = 'http://free.currencyconverterapi.com/api/v5/convert?q=' +
-        query + '&compact=ultra&apiKey=';
+    const url = `http://free.currencyconverterapi.com/api/v5/convert?q=${query}&compact=ultra&apiKey=`;
 
-    https.get(url, function(res) {
-        var body = '';
+    https.get(url, res => {
+        let body = '';
 
-        res.on('data', function(chunk) {
+        res.on('data', chunk => {
             body += chunk;
         });
 
-        res.on('end', function() {
+        res.on('end', () => {
             try {
-                var jsonObj = JSON.parse(body);
+                const jsonObj = JSON.parse(body);
 
-                var val = jsonObj[query];
+                const val = jsonObj[query];
                 if (val) {
-                    var total = val * amount;
+                    const total = val * amount;
                     cb(null, Math.round(total * 100) / 100);
                 } else {
-                    var err = new Error("Value not found for " + query);
+                    const err = new Error(`Value not found for ${query}`);
                     console.log(err);
                     cb(err);
                 }
@@ -48,7 +47,7 @@ function convertCurrency(amount, fromCurrency, toCurrency, cb) {
                 cb(e);
             }
         });
-    }).on('error', function(e) {
+    }).on('error', e => {
         console.log("Got an error: ", e);
         cb(e);
     });
